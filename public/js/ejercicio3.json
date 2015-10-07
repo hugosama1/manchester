@@ -1,0 +1,202 @@
+{
+	"excercises": 
+	[
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[
+							"public class Token implements java.io.Serializable"
+						]
+				}
+			],			
+			"progress": 33,
+			"explanation":"Comenzamos declarar la clase del token",
+			"incrementalText" :[
+							"public class Token implements java.io.Serializable {",
+							"}"
+						]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[  "public Token(int kind, String image)",
+							  "{",
+							  "  this.kind = kind;",
+							  "  this.image = image;",
+							  "}",
+							  "public Token(int kind)",
+							  "{",
+							  "  this(kind, null);",
+							  "}",
+							  "public Token() {}"
+                          ]
+				}
+			],			
+			"progress": 66,
+			"explanation":"Seguimos por los constructores del token los cuales inicializan la variable kind, utilizada para definir el tipo del token en base a las constantes y la variable image la cual contiene el texto de el token",
+			"incrementalText" : 
+						[
+							"public class Token implements java.io.Serializable {",
+							"    public Token(int kind, String image)",
+							"    {",
+							"      this.kind = kind;",
+							"      this.image = image;",
+							"    }",
+							"    public Token(int kind)",
+							"    {",
+							"      this(kind, null);",
+							"    }",
+							"    public Token() {}",
+							"}"
+						]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[  "public String toString()",
+							  "{",
+							  "  return image;",
+							  "}"
+                          ]
+				}
+			],			
+			"progress": 66,
+			"explanation":"Sobreescribimos el método toString para mayor facilidad a la hora de lanzar un error",
+			"incrementalText" : 
+						[
+							"public class Token implements java.io.Serializable {",
+							"    public Token(int kind, String image)",
+							"    {",
+							"      this.kind = kind;",
+							"      this.image = image;",
+							"    }",
+							"    public Token(int kind)",
+							"    {",
+							"      this(kind, null);",
+							"    }",
+							"    public Token() {}",
+							"    public String toString()",
+							"    {",
+							"      return image;",
+							"    }",
+							"}"
+						]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[  "public static Token newToken(int ofKind, String image)",
+							  "{",
+							  "  switch(ofKind)",
+							  "  {",
+							  "    default : return new Token(ofKind, image);",
+							  "  }",
+							  "}",
+							  "public static Token newToken(int ofKind)",
+							  "{",
+							  "  return newToken(ofKind, null);",
+							  "}"
+                          ]
+				}
+			],			
+			"progress": 66,
+			"explanation":"Creamos un método para crear tokens el cual puede ser cambiado en caso de necesitarse trabajo extra para cierto tipo de tokens",
+			"incrementalText" : 
+						[
+							"public class Token implements java.io.Serializable {",
+							"    public Token(int kind, String image)",
+							"    {",
+							"      this.kind = kind;",
+							"      this.image = image;",
+							"    }",
+							"    public Token(int kind)",
+							"    {",
+							"      this(kind, null);",
+							"    }",
+							"    public Token() {}",
+							"    public String toString()",
+							"    {",
+							"      return image;",
+							"    }",
+							"    public static Token newToken(int ofKind, String image)",
+							"    {",
+							"        switch(ofKind)",
+							"        {",
+							"            default : return new Token(ofKind, image);",
+							"        }",
+							"    }",
+							"    public static Token newToken(int ofKind)",
+							"    {",
+							"        return newToken(ofKind, null);",
+							"    }",
+							"}"
+						]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[  
+							"public int kind;",
+							"public int beginLine;",
+							"public int beginColumn;",
+							"public int endLine;",
+							"public int endColumn;",
+							"public String image;",
+							"public Token next;",
+							"public Token specialToken;"
+                          ]
+				}
+			],			
+			"progress": 100,
+			"explanation":"Terminamos declarar las variables utilizadas a lo largo de la construcción de la clase Token",
+			"incrementalText" : 
+						[
+							"public class Token implements java.io.Serializable {",
+							"    public int kind;",
+							"    public int beginLine;",
+							"    public int beginColumn;",
+							"    public int endLine;",
+							"    public int endColumn;",
+							"    public String image;",
+							"    public Token next;",
+							"    public Token specialToken;",
+							"    public Token(int kind, String image)",
+							"    {",
+							"      this.kind = kind;",
+							"      this.image = image;",
+							"    }",
+							"    public Token(int kind)",
+							"    {",
+							"      this(kind, null);",
+							"    }",
+							"    public Token() {}",
+							"    public String toString()",
+							"    {",
+							"      return image;",
+							"    }",
+							"    public static Token newToken(int ofKind, String image)",
+							"    {",
+							"        switch(ofKind)",
+							"        {",
+							"            default : return new Token(ofKind, image);",
+							"        }",
+							"    }",
+							"    public static Token newToken(int ofKind)",
+							"    {",
+							"        return newToken(ofKind, null);",
+							"    }",
+							"}"
+						]
+		}
+	]
+}

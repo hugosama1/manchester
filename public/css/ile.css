@@ -1,0 +1,99 @@
+body {
+ background: url('../img/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+  padding-top: 70px;
+}
+
+.black-color{
+	color: black;
+}
+
+
+.img-div{
+    height:100px;
+    width:100px;
+    overflow:hidden;
+    border-radius:50%;    
+    -webkit-transform:translate(-100%);
+    -webkit-transform: scale(1);
+    margin-left:10px;
+}
+.circle-image{	
+    margin-right:10px;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    /*background-image:url("../img/hugo.jpeg");*/
+    display:block;
+    background-position-y:25%;
+}
+.circle-image2{	
+    margin-left:10px;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background-image:url("../img/jose.jpg");
+    display:block;
+    background-position-y:25%;
+}
+
+.panel :hover {
+    cursor: move;
+}
+
+textarea {
+    height: 500px;
+}
+
+#answers {
+    white-space:pre;
+}
+
+.list-group-item{
+    margin-bottom: 20px;
+    border-radius: 15px !important;
+}
+
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
+
+#myChart{
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#myLegend {
+    margin-top: -5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 820px;
+    background-color: white;
+}
+
+.legend {
+    width: 200em;
+}
+
+.legend .title {
+    display: block;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    padding: 0 0.3em;
+}
+
+.legend .color-sample {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border: 2px solid; /* Comment out if you don't want to show the fillColor */
+    border-radius: 0.5em; /* Comment out if you prefer squarish samples */
+    margin-right: 0.5em;
+}

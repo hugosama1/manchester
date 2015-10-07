@@ -1,0 +1,122 @@
+{
+	"excercises": 
+	[
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser"],
+                    "error" : "La clase debe implementar la interfaz MicroJavaParserConstants debido a que esta contiene las constantes que forman su gramatica"
+
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public MicroJavaParser implements MicroJavaParserConstants"],
+					"error" : "Se necesita el identificador class para denotar que se está declarando una clase"
+				},
+				{	
+					"rightAnswer": false,
+					"text":["class MicroJavaParser implements MicroJavaParserConstants"],
+					"error" : "La clase necesita ser pública para que pueda ser accedida desde fuera del paquete"
+				}
+			],			
+			"progress": 33,
+			"explanation":"Comenzamos por escribir la clase principal del parser, esta contiene la implementacion de la interfaz del compilador",
+			"incrementalText" :["public class MicroJavaParser implements MicroJavaParserConstants"]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants {",
+                            "   public static void main(String args[]) throws ParseException {",
+                            "       MicroJavaParser parser = new MicroJavaParser(System.in);",
+                            "       parser.Program();",
+                            "   }"
+                          ]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants {",
+                            "   public static void main(String args[]) throws ParseException {",
+                            "       MicroJavaParser parser = new MicroJavaParser(System.in);",
+                            "       parser.Program();",
+                            "   }"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				}
+			],			
+			"progress": 66,
+			"explanation":"Seguimos por el método main el cual contiene la llamada entrante al parser",
+			"incrementalText" : 
+						["public class MicroJavaParser implements MicroJavaParserConstants {",
+                            "   public static void main(String args[]) throws ParseException {",
+                            "       MicroJavaParser parser = new MicroJavaParser(System.in);",
+                            "       parser.Program();",
+                            "   }"
+                         ]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": [
+                            "   static final public void Print() throws ParseException {",
+                            "       jj_consume_token(13);",
+                            "       jj_consume_token(14);",
+                            "       Exp();",
+                            "       jj_consume_token(15);",
+                            "       jj_consume_token(16);",
+                            "   }",
+                            "}"
+                    ]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants {",
+                            "   public static void main(String args[]) throws ParseException {",
+                            "       MicroJavaParser parser = new MicroJavaParser(System.in);",
+                            "       parser.Program();",
+                            "   }"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				}
+			],			
+			"progress": 100,
+			"explanation":"seguimos por escribir el primer método de análisis, es decir el print",
+			"incrementalText" :["public class MicroJavaParser implements MicroJavaParserConstants {",
+                            "   public static void main(String args[]) throws ParseException {",
+                            "       MicroJavaParser parser = new MicroJavaParser(System.in);",
+                            "       parser.Program();",
+                            "   }",
+                            "   static final public void Print() throws ParseException {",
+                            "       jj_consume_token(13);",
+                            "       jj_consume_token(14);",
+                            "       Exp();",
+                            "       jj_consume_token(15);",
+                            "       jj_consume_token(16);",
+                            "   }",
+                            "}"
+                          ]
+		}
+	]
+}

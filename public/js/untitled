@@ -1,0 +1,201 @@
+{
+	"excercises": 
+	[
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":["public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParserConstants"],
+                    "error" : "Las interfaces en java se declaran con la palabra clave: interface"
+
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public MicroJavaParser implements MicroJavaParserConstants"],
+					"error" : "Esto es la implementación de la interfaz, buscamos crearla"
+				}
+			],			
+			"progress": 10,
+			"explanation":"Comenzamos por escribir la declaración de la interfaz",
+			"incrementalText" :["public interface MicroJavaParserConstants {",
+                            	"}"]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[
+							"int DEFAULT = 0",
+							"int EOF = 0",
+							"int IF = 1  ",
+							"int ELSE = 2",
+							"int TRUE = 3",
+							"int FALSE = 4",
+							"int IDENTIFIER = 5",
+							"int LETTER = 6",
+							"int DIGIT = 7",
+							"int SYSTEM_OUT = 13",
+							"int LEFT_PARENT = 14",
+							"int RIGHT_PARENT = 15",
+							"int SEMICOLON = 16"
+                          ],
+                    "error" : "Las interfaces en java se declaran con la palabra clave: interface"
+				},
+				{	
+					"rightAnswer": false,
+					"text":[
+							"int DEFAULT = 0",
+							"int EOF = 0",
+							"int IF = 1",
+							"int ARRAY = 2",
+							"int TRUE = 3",
+							"int FALSE = \"cuatro\"",
+							"int IDENTIFIER = 5",
+							"int LETTER = 6",
+							"int DIGIT = 7",
+							"int SYSTEM_OUT = 13",
+							"int LEFT_PARENT = 14",
+							"int RIGHT_PARENT = 15",
+							"int SEMICOLON = 16"
+                          ],
+                    "error" : "Un entero no puede ser declarado con un string"
+				},
+				{	
+					"rightAnswer": false,
+					"text":[
+							"int DEFAULT = 0",
+							"int EOF = 0",
+							"int IF = 1",
+							"int ARRAY = 2",
+							"int TRUE = 3"
+							],
+                    "error" : "Faltan constantes para completar la gramática"
+				}
+			],			
+			"progress": 66,
+			"explanation":"Seguimos con las constantes que se utilizarán como referencia en los tipos de estatutos",
+			"incrementalText" : [
+							"public interface MicroJavaParserConstants {",
+							"    int DEFAULT = 0",
+							"    int EOF = 0",
+							"    int IF = 1  ",
+							"    int ELSE = 2",
+							"    int TRUE = 3",
+							"    int FALSE = 4",
+							"    int IDENTIFIER = 5",
+							"    int LETTER = 6",
+							"    int DIGIT = 7",
+							"    int SYSTEM_OUT = 13",
+							"    int LEFT_PARENT = 14",
+							"    int RIGHT_PARENT = 15",
+							"    int SEMICOLON = 16",
+							"}"
+                         ]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": [
+                            	"String[] tokenImage = {",
+							    "\"&lt;EOF>\"",
+							    "\"if\"",
+							    "\"else\"",
+							    "\"true\"",
+							    "\"false\"",
+							    "\"&lt;IDENTIFIER>\"",
+							    "\"&lt;LETTER>\"",
+							    "\"&lt;DIGIT>\"",
+							    "\" \"",
+							    "\"\\t\"",
+							    "\"\\n\"",
+							    "\"\\r\"",
+							    "\"\\f\"",
+							    "\"System.out.println\"",
+							    "\"(\"",
+							    "\")\"",
+							    "\";\"",
+								"\"};\""
+                    ]
+				},
+				{	
+					"rightAnswer": false,
+					"text": [
+                            	"String[] tokenImage = {",
+							    "\"&lt;EOF>\"",
+							    "\"if\"",
+							    "\"else\"",
+							    "\"true\"",
+							    "\"false\"",
+							    "\"&lt;IDENTIFIER>\"",
+							    "\"&lt;LETTER>\"",
+							    "\"&lt;DIGIT>\"",
+							    "\" \"",
+							    "\"\\t\"",
+							    "\"\\n\"",
+							    "\"\\r\"",
+							    "\"\\f\"",
+							    "\"System.out.println\"",
+							    "\"(\"",
+							    "\")\"",
+							    "\";\"",
+								"\"};\""
+                    ]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParser implements MicroJavaParserConstants"]
+				}
+			],			
+			"progress": 100,
+			"explanation":"Terminamos utilizando un arreglo con los indices acorde a las constantes, que contiene los tokens que se esperan, de esta manera se pueden utilizar para el reporte de errores",
+			"incrementalText" :[
+							"public interface MicroJavaParserConstants {",
+							"    int DEFAULT = 0",
+							"    int EOF = 0",
+							"    int IF = 1  ",
+							"    int ELSE = 2",
+							"    int TRUE = 3",
+							"    int FALSE = 4",
+							"    int IDENTIFIER = 5",
+							"    int LETTER = 6",
+							"    int DIGIT = 7",
+							"    int SYSTEM_OUT = 13",
+							"    int LEFT_PARENT = 14",
+							"    int RIGHT_PARENT = 15",
+							"    int SEMICOLON = 16",
+                        	"    String[] tokenImage = {",
+						    "        \"<EOF>\"",
+						    "        \"if\"",
+						    "        \"else\"",
+						    "        \"true\"",
+						    "        \"false\"",
+						    "        \"<IDENTIFIER>\"",
+						    "        \"<LETTER>\"",
+						    "        \"<DIGIT>\"",
+						    "        \" \"",
+						    "        \"\\t\"",
+						    "        \"\\n\"",
+						    "        \"\\r\"",
+						    "        \"\\f\"",
+						    "        \"System.out.println\"",
+						    "        \"(\"",
+						    "        \")\"",
+						    "        \";\"",
+							"    };",
+							"}"
+                         ]
+		}
+	]
+}

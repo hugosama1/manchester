@@ -1,0 +1,401 @@
+{
+	"excercises": 
+	[
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":["public class MicroJavaParserTokenManagerSimplified","implements MicroJavaParserConstants"]
+				},
+				{	
+					"rightAnswer": false,
+					"text":["public class MicroJavaParserTokenManagerSimplified"],
+                    "error" : "Se debe implementarla interfaz creada previamente"
+
+				}
+			],			
+			"progress": 16,
+			"explanation":"Comenzamos por escribir la declaración de la clase",
+			"incrementalText" :["public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+                            	"}"
+                            	]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text":[
+							"static protected Token jjFillToken()",
+							"{",
+							"    final Token t;",
+							"    final String curTokenImage;",
+							"    final int beginLine;",
+							"    final int endLine;",
+							"    final int beginColumn;",
+							"    final int endColumn;",
+							"    curTokenImage = tokenizer.sval;",
+							"    endLine = tokenizer.lineno();",
+							"    endColumn = 0;",
+							"    t = Token.newToken(jjmatchedKind, curTokenImage);",
+							"    t.endLine = endLine;",
+							"    t.endColumn = endColumn;",
+							"    return t;",
+							"}"
+                          ]
+				}
+			],			
+			"progress": 32,
+			"explanation":"Agregamos el método que construirá el token con la información recabada del flujo de datos",
+			"incrementalText" : [
+							"public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+							"    static protected Token jjFillToken()",
+							"    {",
+							"        final Token t;",
+							"        final String curTokenImage;",
+							"        final int beginLine;",
+							"        final int endLine;",
+							"        final int beginColumn;",
+							"        final int endColumn;",
+							"        curTokenImage = tokenizer.sval;",
+							"        endLine = tokenizer.lineno();",
+							"        endColumn = 0;",
+							"        t = Token.newToken(jjmatchedKind, curTokenImage);",
+							"        t.endLine = endLine;",
+							"        t.endColumn = endColumn;",
+							"        return t;",
+							"    }",
+                        	"}"
+                            	]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": 
+							[
+		                        "public MicroJavaParserTokenManagerSimplified(java.io.InputStream stream) {",
+		                        "ReInit(stream);",
+		                        "}"
+		                    ]
+				}				
+			],			
+			"progress": 48,
+			"explanation":"El siguiente paso es crear el constructor de nuestro scanner el cual incluye un método de inicialización",
+			"incrementalText" :
+								[
+									"public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+									"    static protected Token jjFillToken()",
+									"    {",
+									"        final Token t;",
+									"        final String curTokenImage;",
+									"        final int beginLine;",
+									"        final int endLine;",
+									"        final int beginColumn;",
+									"        final int endColumn;",
+									"        curTokenImage = tokenizer.sval;",
+									"        endLine = tokenizer.lineno();",
+									"        endColumn = 0;",
+									"        t = Token.newToken(jjmatchedKind, curTokenImage);",
+									"        t.endLine = endLine;",
+									"        t.endColumn = endColumn;",
+									"        return t;",
+									"    }",
+			                        "    public MicroJavaParserTokenManagerSimplified(java.io.InputStream stream) {",
+			                        "        ReInit(stream);",
+			                        "    }",
+		                        	"}"
+                            	]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": 
+							[
+		                        "static public void ReInit(java.io.InputStream stream)",
+  								"{",      
+  								"Reader r = new BufferedReader(new InputStreamReader(stream));",
+      							"StreamTokenizer st = new StreamTokenizer(r);",
+      							"tokenizer = st;",
+  								"}"
+		                    ]
+				}				
+			],			
+			"progress": 64,
+			"explanation":"El método de inicialización vuelve a asignar el flujo de datos para así ser capaces de reiniciar el proceso",
+			"incrementalText" :
+								[
+									"public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+									"    static protected Token jjFillToken()",
+									"    {",
+									"        final Token t;",
+									"        final String curTokenImage;",
+									"        final int beginLine;",
+									"        final int endLine;",
+									"        final int beginColumn;",
+									"        final int endColumn;",
+									"        curTokenImage = tokenizer.sval;",
+									"        endLine = tokenizer.lineno();",
+									"        endColumn = 0;",
+									"        t = Token.newToken(jjmatchedKind, curTokenImage);",
+									"        t.endLine = endLine;",
+									"        t.endColumn = endColumn;",
+									"        return t;",
+									"    }",
+			                        "    public MicroJavaParserTokenManagerSimplified(java.io.InputStream stream) {",
+			                        "        ReInit(stream);",
+			                        "    }",
+			                        "    static public void ReInit(java.io.InputStream stream)",
+	  								"    {",      
+	  								"        Reader r = new BufferedReader(new InputStreamReader(stream));",
+	      							"        StreamTokenizer st = new StreamTokenizer(r);",
+	      							"        tokenizer = st;",
+	  								"    }",
+		                        	"}"
+                            	]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": 
+							[
+		                        "public static Token getNextToken()",
+								"{",
+							    "    Token matchedToken = new Token();",
+							    "    matchedToken.beginColumn =0;",
+							    "    matchedToken.beginLine = tokenizer.lineno();",
+							    "    try",
+							    "    {",
+							    "        tokenizer.nextToken();",
+							    "    }catch( java.io.IOException e)",
+							    "    {",
+							    "        jjmatchedKind = 0;",
+							    "        jjmatchedPos = -1;",
+							    "        matchedToken = jjFillToken();",
+							    "        return matchedToken;",
+							    "    }",
+							    "    jjmatchedPos = tokenizer.lineno();",
+							    "    switch(tokenizer.ttype)",
+							    "    {",
+							    "    case StreamTokenizer.TT_WORD:",
+							    "        switch(tokenizer.sval){",
+							    "            case \"System.out.println\": jjmatchedKind = SYSTEM_OUT;",
+							    "               break;",
+							    "           case \"if\": jjmatchedKind = IF;",
+							    "               break;",
+							    "           case \"true\": jjmatchedKind = TRUE;",
+							    "               break;",
+							    "           case \"false\": jjmatchedKind = FALSE;",
+							    "               break;",
+							    "           default: jjmatchedKind = IDENTIFIER;",
+							    "       }",
+							    "       break;",
+							    "   case '(':jjmatchedKind = LEFT_PARENT;",
+							    "       break;",
+							    "   case ')':jjmatchedKind = RIGHT_PARENT;",
+							    "       break;",
+							    "   case ';':jjmatchedKind = SEMICOLON;",
+							    "       break;",
+							    "   case StreamTokenizer.TT_NUMBER: tokenizer.sval = String.valueOf(tokenizer.nval);",
+							    "       jjmatchedKind = DIGIT;",
+							    "      break;",
+							    "    default: jjmatchedKind = -1;",
+							    "       break;",
+							    "    }",
+							    "matchedToken = jjFillToken();",
+							    "return matchedToken;",
+								"}"
+		                    ]
+				}				
+			],			
+			"progress": 80,
+			"explanation":"El método mas importante del escanner es getNextToken, el cual regresa la siguiente parte del texto clasificada de manera que el parser pueda validar.",
+			"incrementalText" :
+								[
+									"public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+									"    static protected Token jjFillToken()",
+									"    {",
+									"        final Token t;",
+									"        final String curTokenImage;",
+									"        final int beginLine;",
+									"        final int endLine;",
+									"        final int beginColumn;",
+									"        final int endColumn;",
+									"        curTokenImage = tokenizer.sval;",
+									"        endLine = tokenizer.lineno();",
+									"        endColumn = 0;",
+									"        t = Token.newToken(jjmatchedKind, curTokenImage);",
+									"        t.endLine = endLine;",
+									"        t.endColumn = endColumn;",
+									"        return t;",
+									"    }",
+			                        "    public MicroJavaParserTokenManagerSimplified(java.io.InputStream stream) {",
+			                        "        ReInit(stream);",
+			                        "    }",
+			                        "    static public void ReInit(java.io.InputStream stream)",
+	  								"    {",      
+	  								"        Reader r = new BufferedReader(new InputStreamReader(stream));",
+	      							"        StreamTokenizer st = new StreamTokenizer(r);",
+	      							"        tokenizer = st;",
+	  								"    }",
+	  								"    public static Token getNextToken()",
+									"    {",
+								    "        Token matchedToken = new Token();",
+								    "        matchedToken.beginColumn =0;",
+								    "        matchedToken.beginLine = tokenizer.lineno();",
+								    "        try",
+								    "        {",
+								    "            tokenizer.nextToken();",
+								    "        }catch( java.io.IOException e)",
+								    "        {",
+								    "            jjmatchedKind = 0;",
+								    "            jjmatchedPos = -1;",
+								    "            matchedToken = jjFillToken();",
+								    "            return matchedToken;",
+								    "        }",
+								    "        jjmatchedPos = tokenizer.lineno();",
+								    "        switch(tokenizer.ttype)",
+								    "        {",
+								    "            case StreamTokenizer.TT_WORD:",
+								    "            switch(tokenizer.sval){",
+								    "                case \"System.out.println\": jjmatchedKind = SYSTEM_OUT;",
+								    "                   break;",
+								    "               case \"if\": jjmatchedKind = IF;",
+								    "                   break;",
+								    "               case \"true\": jjmatchedKind = TRUE;",
+								    "                   break;",
+								    "               case \"false\": jjmatchedKind = FALSE;",
+								    "                   break;",
+								    "               default: jjmatchedKind = IDENTIFIER;",
+								    "       }",
+								    "           break;",
+								    "       case '(':jjmatchedKind = LEFT_PARENT;",
+								    "           break;",
+								    "       case ')':jjmatchedKind = RIGHT_PARENT;",
+								    "           break;",
+								    "       case ';':jjmatchedKind = SEMICOLON;",
+								    "           break;",
+								    "       case StreamTokenizer.TT_NUMBER: tokenizer.sval = String.valueOf(tokenizer.nval);",
+								    "          jjmatchedKind = DIGIT;",
+								    "          break;",
+								    "       default: jjmatchedKind = -1;",
+								    "          break;",
+								    "        }",
+								    "        matchedToken = jjFillToken();",
+								    "        return matchedToken;",
+									"    }",
+		                        	"}"
+                            	]
+		},		
+		{
+			"answers":
+			[
+				{	
+					"rightAnswer": true,
+					"text": 
+							[
+		                        "static int curLexState = 0;",
+								"static int defaultLexState = 0;",
+								"static int jjnewStateCnt;",
+								"static int jjround;",
+								"static int jjmatchedPos;",
+								"static int jjmatchedKind;",
+								"static protected java.io.StreamTokenizer tokenizer;"
+		                    ]
+				}				
+			],			
+			"progress": 100,
+			"explanation":"Por último agregamos las variables utilizadas a lo largo de la construcción de la clase.",
+			"incrementalText" :
+								[
+									"public class MicroJavaParserTokenManagerSimplified implements MicroJavaParserConstants {",
+			                        "    static int curLexState = 0;",
+									"    static int defaultLexState = 0;",
+									"    static int jjnewStateCnt;",
+									"    static int jjround;",
+									"    static int jjmatchedPos;",
+									"    static int jjmatchedKind;",
+									"    static protected java.io.StreamTokenizer tokenizer;",
+									" ",
+									"    static protected Token jjFillToken()",
+									"    {",
+									"        final Token t;",
+									"        final String curTokenImage;",
+									"        final int beginLine;",
+									"        final int endLine;",
+									"        final int beginColumn;",
+									"        final int endColumn;",
+									"        curTokenImage = tokenizer.sval;",
+									"        endLine = tokenizer.lineno();",
+									"        endColumn = 0;",
+									"        t = Token.newToken(jjmatchedKind, curTokenImage);",
+									"        t.endLine = endLine;",
+									"        t.endColumn = endColumn;",
+									"        return t;",
+									"    }",
+			                        "    public MicroJavaParserTokenManagerSimplified(java.io.InputStream stream) {",
+			                        "        ReInit(stream);",
+			                        "    }",
+			                        "    static public void ReInit(java.io.InputStream stream)",
+	  								"    {",      
+	  								"        Reader r = new BufferedReader(new InputStreamReader(stream));",
+	      							"        StreamTokenizer st = new StreamTokenizer(r);",
+	      							"        tokenizer = st;",
+	  								"    }",
+	  								"    public static Token getNextToken()",
+									"    {",
+								    "        Token matchedToken = new Token();",
+								    "        matchedToken.beginColumn =0;",
+								    "        matchedToken.beginLine = tokenizer.lineno();",
+								    "        try",
+								    "        {",
+								    "            tokenizer.nextToken();",
+								    "        }catch( java.io.IOException e)",
+								    "        {",
+								    "            jjmatchedKind = 0;",
+								    "            jjmatchedPos = -1;",
+								    "            matchedToken = jjFillToken();",
+								    "            return matchedToken;",
+								    "        }",
+								    "        jjmatchedPos = tokenizer.lineno();",
+								    "        switch(tokenizer.ttype)",
+								    "        {",
+								    "            case StreamTokenizer.TT_WORD:",
+								    "            switch(tokenizer.sval){",
+								    "                case \"System.out.println\": jjmatchedKind = SYSTEM_OUT;",
+								    "                   break;",
+								    "               case \"if\": jjmatchedKind = IF;",
+								    "                   break;",
+								    "               case \"true\": jjmatchedKind = TRUE;",
+								    "                   break;",
+								    "               case \"false\": jjmatchedKind = FALSE;",
+								    "                   break;",
+								    "               default: jjmatchedKind = IDENTIFIER;",
+								    "       }",
+								    "           break;",
+								    "       case '(':jjmatchedKind = LEFT_PARENT;",
+								    "           break;",
+								    "       case ')':jjmatchedKind = RIGHT_PARENT;",
+								    "           break;",
+								    "       case ';':jjmatchedKind = SEMICOLON;",
+								    "           break;",
+								    "       case StreamTokenizer.TT_NUMBER: tokenizer.sval = String.valueOf(tokenizer.nval);",
+								    "          jjmatchedKind = DIGIT;",
+								    "          break;",
+								    "       default: jjmatchedKind = -1;",
+								    "          break;",
+								    "        }",
+								    "        matchedToken = jjFillToken();",
+								    "        return matchedToken;",
+									"    }",
+		                        	"}"
+                            	]
+		}
+	]
+}
